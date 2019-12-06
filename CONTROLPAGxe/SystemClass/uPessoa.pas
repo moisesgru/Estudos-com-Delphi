@@ -6,13 +6,6 @@ uses
   uContato;
 
 type
-  IPessoa = interface
-    ['{9D5FCA59-5F92-4A60-BEE0-814E48798E11}']
-  procedure SetNome(Value:String);
-  function GetNome:string;
-  property Nome: String read GetNome write SetNome;
-  end;
-
   TPessoa = class(TContato)
   private
     Fnome_razao: string;

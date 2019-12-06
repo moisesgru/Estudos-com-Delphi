@@ -10,6 +10,7 @@ uses
   uContato in 'SystemClass\uContato.pas',
   uFisica in 'SystemClass\uFisica.pas',
   uJuridica in 'SystemClass\uJuridica.pas';
+  uIPessoa in 'SystemClass\uIPessoa.pas';
 
 {$R *.res}
 

@@ -1,0 +1,42 @@
+object frmControlPag: TfrmControlPag
+  Left = 0
+  Top = 0
+  Caption = 'CONTROL-PAG'
+  ClientHeight = 309
+  ClientWidth = 512
+  Visible = False
+  OnCreate = FormCreate
+  StyleLookup = 'backgroundstyle'
+  object Button1: TButton
+    Position.Point = '(200,136)'
+    Width = 80.000000000000000000
+    Height = 22.000000000000000000
+    OnClick = Button1Click
+    TabOrder = 0
+    Text = 'OFF'
+  end
+  object Edit1: TEdit
+    Position.Point = '(160,64)'
+    Width = 100.000000000000000000
+    Height = 22.000000000000000000
+    TabOrder = 1
+    KeyboardType = vktDefault
+    Password = False
+  end
+  object Button2: TButton
+    Position.Point = '(200,168)'
+    Width = 80.000000000000000000
+    Height = 22.000000000000000000
+    OnClick = Button2Click
+    TabOrder = 2
+    Text = 'Desligado'
+  end
+  object Button3: TButton
+    Position.Point = '(200,200)'
+    Width = 80.000000000000000000
+    Height = 22.000000000000000000
+    OnClick = Button3Click
+    TabOrder = 3
+    Text = 'Pessoa'
+  end
+end

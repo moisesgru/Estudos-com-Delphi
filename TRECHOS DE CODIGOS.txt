@@ -1,0 +1,154 @@
+PROGRAMADOR RESPONSÁVEL POR:
+ANTÓNIO: RC, MS, DIVISEG, BIGSTAR
+DANIEL: SANTANA, GPV, CASAINOX, BENTOMAR.
+*****************************************************************
+*** UHELPERS ***
+C:\TechTRS\Sistema Impacto\Source\Owner Programs\Trunk\Classes\uHelpers.pas
+cds.SetParameters();
+cds.CheckParameters;
+cds.ScanDataSet;
+*****************************************************************
+FormatSettings := TFormatSettings.Create('en-us');
+*****************************************************************
+variavelString := VarToStrDef(__SuperClass.GetInstance.DBFunctions.GetParamValue('SV_PARAMETRO'), EmptyStr);
+if Trim(variavelString) <> EmptyStr then
+begin
+	for AuxUsuario in __SuperClass.GetInstance.GenericsF.Split(variavelString, ';') do
+end;
+*****************************************************************
+var
+  Ret : TRPeriodo;
+  Dia, Mes, Ano: Word;
+begin
+  DecodeDate(__SuperClass.GetInstance.User.DataBase,Ano,Mes,Dia);
+  Ret.EmissaoAte := (EncodeDate(Ano,Mes,1)-1);
+  DecodeDate(Ret.EmissaoAte, Ano, Mes, Dia);
+  Ret.EmissaoDe  := EncodeDate(Ano, Mes,1);
+  Result := Ret;
+*****************************************************************  
+DefPar := False; //desabilita o sql padrão herdada (dspAuxiliar)
+DefFileName:='NOMEDOARQUIVO.DEF';
+*****************************************************************  
+Clipboard.AsText  :=  sql;
+*****************************************************************  
+function GetMacAddress(const AServerName: string): string;
+type
+  TNetTransportEnum = function(pszServer: PWideChar; Level: DWORD; var pbBuffer: pointer; PrefMaxLen: LongInt;
+    var EntriesRead: DWORD; var TotalEntries: DWORD; var ResumeHandle: DWORD): DWORD; stdcall;
+  TNetApiBufferFree = function(Buffer: pointer): DWORD; stdcall;
+  PTransportInfo = ^TTransportInfo;
+  TTransportInfo = record
+    quality_of_service: DWORD;
+    number_of_vcs: DWORD;
+    transport_name: PWChar;
+    transport_address: PWChar;
+    wan_ish: Boolean;
+  end;
+var
+  E, ResumeHandle, EntriesRead, TotalEntries: DWORD;
+  FLibHandle: THandle;
+  sMachineName, sMacAddr, Retvar: String;
+  pBuffer: pointer;
+  pInfo: PTransportInfo;
+  FNetTransportEnum: TNetTransportEnum;
+  FNetApiBufferFree: TNetApiBufferFree;
+  pszServer: array [0 .. 128] of WideChar;
+  I, ii, iIdx: Integer;
+begin
+  sMachineName := Trim(AServerName);
+  Retvar := '00-00-00-00-00-00';
+  // Add leading \\ if missing
+  if (sMachineName <> '') and (length(sMachineName) = 2) then
+  begin
+    if copy(sMachineName, 1, 2) <> '\\' then
+      sMachineName := '\\' + sMachineName
+  end;
+  // Setup and load from DLL
+  pBuffer := nil;
+  ResumeHandle := 0;
+  FLibHandle := LoadLibrary('NETAPI32.DLL');
+  // Execute the external function
+  if FLibHandle <> 0 then
+  begin
+    @FNetTransportEnum := GetProcAddress(FLibHandle, 'NetWkstaTransportEnum');
+    @FNetApiBufferFree := GetProcAddress(FLibHandle, 'NetApiBufferFree');
+    E := FNetTransportEnum(StringToWideChar(sMachineName, pszServer, 129), 0, pBuffer, -1, EntriesRead, TotalEntries,
+      ResumeHandle);
+    if E = 0 then
+    begin
+      pInfo := pBuffer;
+      // Enumerate all protocols - look for TCPIP
+      for I := 1 to EntriesRead do
+      begin
+        if (Pos('TCPIP', UpperCase(pInfo^.transport_name)) <> 0) then
+        begin
+          // Got It - now format result 'xx-xx-xx-xx-xx-xx'
+          iIdx := 1;
+          sMacAddr := pInfo^.transport_address;
+
+          for ii := 1 to 12 do
+          begin
+            Retvar[iIdx] := sMacAddr[ii];
+            inc(iIdx);
+            if iIdx in [3, 6, 9, 12, 15] then
+              inc(iIdx);
+          end;
+        end;
+        inc(pInfo);
+      end;
+      if (pBuffer <> nil) then
+        FNetApiBufferFree(pBuffer);
+    end;
+    try
+      FreeLibrary(FLibHandle);
+    except
+      // Silent Error
+    end;
+  end;
+  Result := Retvar;
+end;  
+*****************************************************************
+procedure AddLog(Empresa, Filial, Rotina, Entidade, Proprietario, Descricao: String; Tipo: TTypeLog);
+var
+  SQL, Mac: String;
+begin
+  try
+    Mac := GetMacAddress(__SuperClass.GetInstance.User.ip);
+    SQL := Format(' INSERT INTO SYS_LOG (EMPRESA, FILIAL, IDROTINA, ROTINA, DESCRICAO, TIPO, CODIGOUSUARIO, NOMEUSUARIO, ' +
+      ' NOMEPC, IPV4, IPV6, MACADRESS, ENTIDADE, PROPRIETARIO)' +
+      ' VALUES (%s, %s, %s, %s, %s, %s, %d, %s, %s, %s, %s, %s, %s, %s)', [QuotedStr(Empresa), QuotedStr(Filial),
+      QuotedStr(__SuperClass.GetInstance.User.GetRoutineByClassName(UpperCase(Rotina)).Id), QuotedStr(UpperCase(Rotina)),
+      QuotedStr(UpperCase(Descricao)), QuotedStr(IntToStr(Ord(Tipo))), __SuperClass.GetInstance.User.Id,
+      QuotedStr(String(__SuperClass.GetInstance.User.FullName)), QuotedStr(String(__SuperClass.GetInstance.User.ComputerName)),
+      QuotedStr(String(__SuperClass.GetInstance.User.Ip)), QuotedStr(''), QuotedStr(Mac), QuotedStr(Entidade),
+      QuotedStr(Proprietario)]);
+      OutputDebugString(PWideChar(SQL));
+      __SuperClass.GetInstance.DBFunctions.ExecuteSQL(SQL);
+  except
+    on E: Exception do
+      __SuperClass.GetInstance.GenericsF.ShowException(E);
+  end;
+end; //A SYS_LOG TEM QUE POSSUIR UM GENERATOR
+*****************************************************************
+procedure TfrmArquivoIntegracao.btnConfirmarClick(Sender: TObject);
+private Msg: TProgressMsg; (*uProgressMsg*) //Declarar no private
+begin
+  Try
+    __SuperClass.GetInstance.GenericsF.DisplayInformation(itBegin, Msg, '');
+    __SuperClass.GetInstance.GenericsF.DisplayInformation(itUpdate, Msg, 'Iniciando processo de extração de dados financeiro. Aguarde...');
+      while Not cdsDados.Eof do
+      begin
+        inc(i);
+        __SuperClass.GetInstance.GenericsF.DisplayInformation(itUpdate, Msg, Format('Exportantando para arquivo (%d/%d)',[i,cdsDados.RecordCount]));
+        cdsDados.Next;
+      end;
+      __SuperClass.GetInstance.GenericsF.DisplayInformation(itUpdate, Msg, 'Arquivo exportado. Processo concluído');
+    end;
+  Finally
+    if Assigned(Msg) then
+    begin
+      __SuperClass.GetInstance.GenericsF.DisplayInformation(itClose, Msg, '');
+    end;
+  End;
+end;
+*****************************************************************

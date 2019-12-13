@@ -3,40 +3,162 @@ object frmControlPag: TfrmControlPag
   Top = 0
   Caption = 'CONTROL-PAG'
   ClientHeight = 309
-  ClientWidth = 512
+  ClientWidth = 646
   Visible = False
   OnCreate = FormCreate
   StyleLookup = 'backgroundstyle'
   object Button1: TButton
-    Position.Point = '(200,136)'
+    Position.Point = '(552,8)'
     Width = 80.000000000000000000
-    Height = 22.000000000000000000
+    Height = 24.000000000000000000
     OnClick = Button1Click
     TabOrder = 0
     Text = 'OFF'
   end
-  object Edit1: TEdit
-    Position.Point = '(160,64)'
-    Width = 100.000000000000000000
-    Height = 22.000000000000000000
-    TabOrder = 1
-    KeyboardType = vktDefault
-    Password = False
-  end
   object Button2: TButton
-    Position.Point = '(200,168)'
+    Position.Point = '(552,40)'
     Width = 80.000000000000000000
     Height = 22.000000000000000000
     OnClick = Button2Click
-    TabOrder = 2
+    TabOrder = 1
     Text = 'Desligado'
   end
   object Button3: TButton
-    Position.Point = '(200,200)'
-    Width = 80.000000000000000000
+    Position.Point = '(544,72)'
+    Width = 97.000000000000000000
     Height = 22.000000000000000000
     OnClick = Button3Click
-    TabOrder = 3
-    Text = 'Pessoa'
+    TabOrder = 2
+    Text = 'Pessoa F'#237'sica'
+  end
+  object Edit1: TEdit
+    Position.Point = '(96,64)'
+    Width = 185.000000000000000000
+    Height = 22.000000000000000000
+    TabOrder = 14
+    KeyboardType = vktDefault
+    Password = False
+  end
+  object BindNavigator1: TBindNavigator
+    Position.Point = '(96,8)'
+    Width = 185.000000000000000000
+    Height = 25.000000000000000000
+    BindScope = BindScopeDB1
+    VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast, nbInsert, nbDelete, nbEdit, nbPost]
+    xRadius = 4.000000000000000000
+    yRadius = 4.000000000000000000
+  end
+  object Edit2: TEdit
+    Position.Point = '(96,112)'
+    Width = 185.000000000000000000
+    Height = 22.000000000000000000
+    TabOrder = 18
+    KeyboardType = vktDefault
+    Password = False
+  end
+  object Edit3: TEdit
+    Position.Point = '(96,160)'
+    Width = 185.000000000000000000
+    Height = 22.000000000000000000
+    TabOrder = 23
+    KeyboardType = vktDefault
+    Password = False
+  end
+  object Label1: TLabel
+    Position.Point = '(96,48)'
+    Width = 120.000000000000000000
+    Height = 15.000000000000000000
+    TabOrder = 24
+    Text = 'Nome'
+  end
+  object Label2: TLabel
+    Position.Point = '(96,96)'
+    Width = 120.000000000000000000
+    Height = 15.000000000000000000
+    TabOrder = 25
+    Text = 'Apelido'
+  end
+  object Label3: TLabel
+    Position.Point = '(96,144)'
+    Width = 120.000000000000000000
+    Height = 15.000000000000000000
+    TabOrder = 26
+    Text = 'Email'
+  end
+  object ClientDataSet1: TClientDataSet
+    Active = True
+    Aggregates = <>
+    FieldDefs = <
+      item
+        Name = 'Nome'
+        DataType = ftString
+        Size = 20
+      end
+      item
+        Name = 'Apelido'
+        DataType = ftString
+        Size = 10
+      end
+      item
+        Name = 'Email'
+        DataType = ftString
+        Size = 20
+      end>
+    IndexDefs = <>
+    Params = <>
+    StoreDefs = True
+    BeforePost = ClientDataSet1BeforePost
+    Left = 32
+    Top = 112
+    Data = {
+      690000009619E0BD0100000018000000030000000000030000006900044E6F6D
+      650100490000000100055749445448020002001400074170656C69646F010049
+      0000000100055749445448020002000A0005456D61696C010049000000010005
+      57494454480200020014000000}
+    object ClientDataSet1Nome: TStringField
+      FieldName = 'Nome'
+    end
+    object ClientDataSet1Apelido: TStringField
+      FieldName = 'Apelido'
+      Size = 10
+    end
+    object ClientDataSet1Email: TStringField
+      FieldName = 'Email'
+    end
+  end
+  object DataSource1: TDataSource
+    DataSet = ClientDataSet1
+    Left = 32
+    Top = 168
+  end
+  object BindingsList1: TBindingsList
+    Methods = <>
+    OutputConverters = <>
+    UseAppManager = True
+    Left = 36
+    Top = 5
+    object DBLinkEdit1Nome1: TBindDBEditLink
+      Category = 'DB Links'
+      DataSource = BindScopeDB1
+      FieldName = 'Nome'
+      EditControl = Edit1
+    end
+    object DBLinkEdit2Apelido1: TBindDBEditLink
+      Category = 'DB Links'
+      DataSource = BindScopeDB1
+      FieldName = 'Apelido'
+      EditControl = Edit2
+    end
+    object DBLinkEdit3Email1: TBindDBEditLink
+      Category = 'DB Links'
+      DataSource = BindScopeDB1
+      FieldName = 'Email'
+      EditControl = Edit3
+    end
+  end
+  object BindScopeDB1: TBindScopeDB
+    DataSource = DataSource1
+    Left = 34
+    Top = 58
   end
 end

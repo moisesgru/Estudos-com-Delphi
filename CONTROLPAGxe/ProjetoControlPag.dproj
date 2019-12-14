@@ -139,14 +139,14 @@
 				<Form>frmControlPag</Form>
 				<FormType>fmx</FormType>
 			</DCCReference>
-			<DCCReference Include="SystemClass\uPessoa.pas"/>
 			<DCCReference Include="UtilitiesClass\uButtonHelper.pas"/>
 			<DCCReference Include="UtilitiesClass\uIFTernario.pas"/>
 			<DCCReference Include="UtilitiesClass\uLibrary.pas"/>
+			<DCCReference Include="SystemClass\uUsuario.pas"/>
 			<DCCReference Include="SystemClass\uContato.pas"/>
+			<DCCReference Include="SystemClass\uEndereco.pas"/>
 			<DCCReference Include="SystemClass\uFisica.pas"/>
-			<DCCReference Include="SystemClass\uJuridica.pas"/>
-			<DCCReference Include="SystemClass\uIPessoa.pas"/>
+			<DCCReference Include="SystemClass\uPessoa.pas"/>
 			<BuildConfiguration Include="Release">
 				<Key>Cfg_2</Key>
 				<CfgParent>Base</CfgParent>
@@ -248,10 +248,10 @@
 						<Platform Name="iOSDevice32">
 							<Operation>1</Operation>
 						</Platform>
-						<Platform Name="iOSSimulator">
+						<Platform Name="iOSDevice64">
 							<Operation>1</Operation>
 						</Platform>
-						<Platform Name="iOSDevice64">
+						<Platform Name="iOSSimulator">
 							<Operation>1</Operation>
 						</Platform>
 					</DeployClass>
@@ -259,10 +259,10 @@
 						<Platform Name="iOSDevice32">
 							<Operation>1</Operation>
 						</Platform>
-						<Platform Name="iOSSimulator">
+						<Platform Name="iOSDevice64">
 							<Operation>1</Operation>
 						</Platform>
-						<Platform Name="iOSDevice64">
+						<Platform Name="iOSSimulator">
 							<Operation>1</Operation>
 						</Platform>
 					</DeployClass>
@@ -270,10 +270,10 @@
 						<Platform Name="iOSDevice32">
 							<Operation>1</Operation>
 						</Platform>
-						<Platform Name="iOSSimulator">
+						<Platform Name="iOSDevice64">
 							<Operation>1</Operation>
 						</Platform>
-						<Platform Name="iOSDevice64">
+						<Platform Name="iOSSimulator">
 							<Operation>1</Operation>
 						</Platform>
 					</DeployClass>
@@ -287,10 +287,10 @@
 						<Platform Name="iOSDevice32">
 							<Operation>1</Operation>
 						</Platform>
-						<Platform Name="iOSSimulator">
+						<Platform Name="iOSDevice64">
 							<Operation>1</Operation>
 						</Platform>
-						<Platform Name="iOSDevice64">
+						<Platform Name="iOSSimulator">
 							<Operation>1</Operation>
 						</Platform>
 					</DeployClass>
@@ -298,10 +298,10 @@
 						<Platform Name="iOSDevice32">
 							<Operation>1</Operation>
 						</Platform>
-						<Platform Name="iOSSimulator">
+						<Platform Name="iOSDevice64">
 							<Operation>1</Operation>
 						</Platform>
-						<Platform Name="iOSDevice64">
+						<Platform Name="iOSSimulator">
 							<Operation>1</Operation>
 						</Platform>
 					</DeployClass>
@@ -333,10 +333,10 @@
 						<Platform Name="iOSDevice32">
 							<Operation>1</Operation>
 						</Platform>
-						<Platform Name="iOSSimulator">
+						<Platform Name="iOSDevice64">
 							<Operation>1</Operation>
 						</Platform>
-						<Platform Name="iOSDevice64">
+						<Platform Name="iOSSimulator">
 							<Operation>1</Operation>
 						</Platform>
 					</DeployClass>
@@ -344,10 +344,10 @@
 						<Platform Name="iOSDevice32">
 							<Operation>1</Operation>
 						</Platform>
-						<Platform Name="iOSSimulator">
+						<Platform Name="iOSDevice64">
 							<Operation>1</Operation>
 						</Platform>
-						<Platform Name="iOSDevice64">
+						<Platform Name="iOSSimulator">
 							<Operation>1</Operation>
 						</Platform>
 					</DeployClass>
@@ -355,10 +355,10 @@
 						<Platform Name="iOSDevice32">
 							<Operation>1</Operation>
 						</Platform>
-						<Platform Name="iOSSimulator">
+						<Platform Name="iOSDevice64">
 							<Operation>1</Operation>
 						</Platform>
-						<Platform Name="iOSDevice64">
+						<Platform Name="iOSSimulator">
 							<Operation>1</Operation>
 						</Platform>
 					</DeployClass>
@@ -447,10 +447,10 @@
 						<Platform Name="iOSDevice32">
 							<Operation>1</Operation>
 						</Platform>
-						<Platform Name="iOSSimulator">
+						<Platform Name="iOSDevice64">
 							<Operation>1</Operation>
 						</Platform>
-						<Platform Name="iOSDevice64">
+						<Platform Name="iOSSimulator">
 							<Operation>1</Operation>
 						</Platform>
 					</DeployClass>
@@ -458,10 +458,10 @@
 						<Platform Name="iOSDevice32">
 							<Operation>1</Operation>
 						</Platform>
-						<Platform Name="iOSSimulator">
+						<Platform Name="iOSDevice64">
 							<Operation>1</Operation>
 						</Platform>
-						<Platform Name="iOSDevice64">
+						<Platform Name="iOSSimulator">
 							<Operation>1</Operation>
 						</Platform>
 					</DeployClass>
@@ -493,10 +493,10 @@
 						<Platform Name="iOSDevice32">
 							<Operation>1</Operation>
 						</Platform>
-						<Platform Name="iOSSimulator">
+						<Platform Name="iOSDevice64">
 							<Operation>1</Operation>
 						</Platform>
-						<Platform Name="iOSDevice64">
+						<Platform Name="iOSSimulator">
 							<Operation>1</Operation>
 						</Platform>
 					</DeployClass>
@@ -522,10 +522,10 @@
 						<Platform Name="iOSDevice32">
 							<Operation>1</Operation>
 						</Platform>
-						<Platform Name="iOSSimulator">
+						<Platform Name="iOSDevice64">
 							<Operation>1</Operation>
 						</Platform>
-						<Platform Name="iOSDevice64">
+						<Platform Name="iOSSimulator">
 							<Operation>1</Operation>
 						</Platform>
 					</DeployClass>
@@ -564,10 +564,10 @@
 						<Platform Name="iOSDevice32">
 							<Operation>1</Operation>
 						</Platform>
-						<Platform Name="iOSSimulator">
+						<Platform Name="iOSDevice64">
 							<Operation>1</Operation>
 						</Platform>
-						<Platform Name="iOSDevice64">
+						<Platform Name="iOSSimulator">
 							<Operation>1</Operation>
 						</Platform>
 					</DeployClass>
@@ -587,10 +587,10 @@
 						<Platform Name="iOSDevice32">
 							<Operation>1</Operation>
 						</Platform>
-						<Platform Name="iOSSimulator">
+						<Platform Name="iOSDevice64">
 							<Operation>1</Operation>
 						</Platform>
-						<Platform Name="iOSDevice64">
+						<Platform Name="iOSSimulator">
 							<Operation>1</Operation>
 						</Platform>
 					</DeployClass>
@@ -672,10 +672,10 @@
 						<Platform Name="iOSDevice32">
 							<Operation>1</Operation>
 						</Platform>
-						<Platform Name="iOSSimulator">
+						<Platform Name="iOSDevice64">
 							<Operation>1</Operation>
 						</Platform>
-						<Platform Name="iOSDevice64">
+						<Platform Name="iOSSimulator">
 							<Operation>1</Operation>
 						</Platform>
 					</DeployClass>
@@ -699,10 +699,10 @@
 						<Platform Name="iOSDevice32">
 							<Operation>1</Operation>
 						</Platform>
-						<Platform Name="iOSSimulator">
+						<Platform Name="iOSDevice64">
 							<Operation>1</Operation>
 						</Platform>
-						<Platform Name="iOSDevice64">
+						<Platform Name="iOSSimulator">
 							<Operation>1</Operation>
 						</Platform>
 					</DeployClass>
@@ -710,10 +710,10 @@
 						<Platform Name="iOSDevice32">
 							<Operation>1</Operation>
 						</Platform>
-						<Platform Name="iOSSimulator">
+						<Platform Name="iOSDevice64">
 							<Operation>1</Operation>
 						</Platform>
-						<Platform Name="iOSDevice64">
+						<Platform Name="iOSSimulator">
 							<Operation>1</Operation>
 						</Platform>
 					</DeployClass>
@@ -733,10 +733,10 @@
 						<Platform Name="iOSDevice32">
 							<Operation>1</Operation>
 						</Platform>
-						<Platform Name="iOSSimulator">
+						<Platform Name="iOSDevice64">
 							<Operation>1</Operation>
 						</Platform>
-						<Platform Name="iOSDevice64">
+						<Platform Name="iOSSimulator">
 							<Operation>1</Operation>
 						</Platform>
 					</DeployClass>
@@ -779,10 +779,10 @@
 						<Platform Name="iOSDevice32">
 							<Operation>1</Operation>
 						</Platform>
-						<Platform Name="iOSSimulator">
+						<Platform Name="iOSDevice64">
 							<Operation>1</Operation>
 						</Platform>
-						<Platform Name="iOSDevice64">
+						<Platform Name="iOSSimulator">
 							<Operation>1</Operation>
 						</Platform>
 					</DeployClass>
@@ -790,10 +790,10 @@
 						<Platform Name="iOSDevice32">
 							<Operation>1</Operation>
 						</Platform>
-						<Platform Name="iOSSimulator">
+						<Platform Name="iOSDevice64">
 							<Operation>1</Operation>
 						</Platform>
-						<Platform Name="iOSDevice64">
+						<Platform Name="iOSSimulator">
 							<Operation>1</Operation>
 						</Platform>
 					</DeployClass>
@@ -807,10 +807,10 @@
 						<Platform Name="iOSDevice32">
 							<Operation>1</Operation>
 						</Platform>
-						<Platform Name="iOSSimulator">
+						<Platform Name="iOSDevice64">
 							<Operation>1</Operation>
 						</Platform>
-						<Platform Name="iOSDevice64">
+						<Platform Name="iOSSimulator">
 							<Operation>1</Operation>
 						</Platform>
 					</DeployClass>
@@ -818,10 +818,10 @@
 						<Platform Name="iOSDevice32">
 							<Operation>1</Operation>
 						</Platform>
-						<Platform Name="iOSSimulator">
+						<Platform Name="iOSDevice64">
 							<Operation>1</Operation>
 						</Platform>
-						<Platform Name="iOSDevice64">
+						<Platform Name="iOSSimulator">
 							<Operation>1</Operation>
 						</Platform>
 					</DeployClass>
@@ -829,10 +829,10 @@
 						<Platform Name="iOSDevice32">
 							<Operation>1</Operation>
 						</Platform>
-						<Platform Name="iOSSimulator">
+						<Platform Name="iOSDevice64">
 							<Operation>1</Operation>
 						</Platform>
-						<Platform Name="iOSDevice64">
+						<Platform Name="iOSSimulator">
 							<Operation>1</Operation>
 						</Platform>
 					</DeployClass>
@@ -852,10 +852,10 @@
 						<Platform Name="iOSDevice32">
 							<Operation>1</Operation>
 						</Platform>
-						<Platform Name="iOSSimulator">
+						<Platform Name="iOSDevice64">
 							<Operation>1</Operation>
 						</Platform>
-						<Platform Name="iOSDevice64">
+						<Platform Name="iOSSimulator">
 							<Operation>1</Operation>
 						</Platform>
 					</DeployClass>
@@ -863,16 +863,21 @@
 						<Platform Name="iOSDevice32">
 							<Operation>1</Operation>
 						</Platform>
+						<Platform Name="iOSDevice64">
+							<Operation>1</Operation>
+						</Platform>
 						<Platform Name="iOSSimulator">
+							<Operation>1</Operation>
+						</Platform>
+					</DeployClass>
+					<DeployClass Name="iPhone_Launch1334">
+						<Platform Name="iOSDevice32">
 							<Operation>1</Operation>
 						</Platform>
 						<Platform Name="iOSDevice64">
 							<Operation>1</Operation>
 						</Platform>
-					</DeployClass>
-					<DeployClass Name="Android_LauncherIcon72">
-						<Platform Name="Android">
-							<RemoteDir>res\drawable-hdpi</RemoteDir>
+						<Platform Name="iOSSimulator">
 							<Operation>1</Operation>
 						</Platform>
 					</DeployClass>
@@ -887,14 +892,9 @@
 							<Operation>1</Operation>
 						</Platform>
 					</DeployClass>
-					<DeployClass Name="iPhone_Launch1334">
-						<Platform Name="iOSDevice32">
-							<Operation>1</Operation>
-						</Platform>
-						<Platform Name="iOSSimulator">
-							<Operation>1</Operation>
-						</Platform>
-						<Platform Name="iOSDevice64">
+					<DeployClass Name="Android_LauncherIcon72">
+						<Platform Name="Android">
+							<RemoteDir>res\drawable-hdpi</RemoteDir>
 							<Operation>1</Operation>
 						</Platform>
 					</DeployClass>
@@ -905,8 +905,8 @@
 					<ProjectRoot Name="$(PROJECTNAME).app" Platform="iOSDevice64"/>
 					<ProjectRoot Name="$(PROJECTNAME)" Platform="Linux64"/>
 					<ProjectRoot Name="$(PROJECTNAME).app" Platform="OSX32"/>
-					<ProjectRoot Name="$(PROJECTNAME).app" Platform="iOSSimulator"/>
 					<ProjectRoot Name="$(PROJECTNAME)" Platform="Win64"/>
+					<ProjectRoot Name="$(PROJECTNAME).app" Platform="iOSSimulator"/>
 				</Deployment>
 				<Platforms>
 					<Platform value="Win64">True</Platform>

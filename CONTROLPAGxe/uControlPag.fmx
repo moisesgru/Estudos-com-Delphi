@@ -3,40 +3,181 @@ object frmControlPag: TfrmControlPag
   Top = 0
   Caption = 'CONTROL-PAG'
   ClientHeight = 309
-  ClientWidth = 512
-  Visible = False
+  ClientWidth = 646
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop, iPhone, iPad]
   OnCreate = FormCreate
-  StyleLookup = 'backgroundstyle'
+  DesignerMasterStyle = 0
   object Button1: TButton
-    Position.Point = '(200,136)'
-    Width = 80.000000000000000000
-    Height = 22.000000000000000000
-    OnClick = Button1Click
+    Position.X = 552.000000000000000000
+    Position.Y = 8.000000000000000000
+    Size.Width = 80.000000000000000000
+    Size.Height = 24.000000000000000000
+    Size.PlatformDefault = False
     TabOrder = 0
     Text = 'OFF'
-  end
-  object Edit1: TEdit
-    Position.Point = '(160,64)'
-    Width = 100.000000000000000000
-    Height = 22.000000000000000000
-    TabOrder = 1
-    KeyboardType = vktDefault
-    Password = False
+    OnClick = Button1Click
   end
   object Button2: TButton
-    Position.Point = '(200,168)'
-    Width = 80.000000000000000000
-    Height = 22.000000000000000000
-    OnClick = Button2Click
-    TabOrder = 2
+    Position.X = 552.000000000000000000
+    Position.Y = 40.000000000000000000
+    Size.Width = 80.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
     Text = 'Desligado'
+    OnClick = Button2Click
   end
   object Button3: TButton
-    Position.Point = '(200,200)'
-    Width = 80.000000000000000000
-    Height = 22.000000000000000000
+    Position.X = 544.000000000000000000
+    Position.Y = 72.000000000000000000
+    Size.Width = 97.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 2
+    Text = 'Pessoa F'#237'sica'
     OnClick = Button3Click
-    TabOrder = 3
-    Text = 'Pessoa'
+  end
+  object Edit1: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 14
+    Position.X = 96.000000000000000000
+    Position.Y = 64.000000000000000000
+    Size.Width = 185.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object BindNavigator1: TBindNavigator
+    Position.X = 96.000000000000000000
+    Position.Y = 8.000000000000000000
+    Size.Width = 184.000000000000000000
+    Size.Height = 25.000000000000000000
+    Size.PlatformDefault = False
+    DataSource = BindScopeDB1
+    VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast, nbInsert, nbDelete, nbEdit, nbPost]
+    xRadius = 4.000000000000000000
+    yRadius = 4.000000000000000000
+  end
+  object Edit2: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 18
+    Position.X = 96.000000000000000000
+    Position.Y = 112.000000000000000000
+    Size.Width = 185.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object Edit3: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 23
+    Position.X = 96.000000000000000000
+    Position.Y = 160.000000000000000000
+    Size.Width = 185.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object Label1: TLabel
+    Position.X = 96.000000000000000000
+    Position.Y = 48.000000000000000000
+    Size.Width = 120.000000000000000000
+    Size.Height = 15.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Nome'
+    TabOrder = 24
+  end
+  object Label2: TLabel
+    Position.X = 96.000000000000000000
+    Position.Y = 96.000000000000000000
+    Size.Width = 120.000000000000000000
+    Size.Height = 15.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Apelido'
+    TabOrder = 25
+  end
+  object Label3: TLabel
+    Position.X = 96.000000000000000000
+    Position.Y = 144.000000000000000000
+    Size.Width = 120.000000000000000000
+    Size.Height = 15.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Email'
+    TabOrder = 26
+  end
+  object ClientDataSet1: TClientDataSet
+    PersistDataPacket.Data = {
+      690000009619E0BD0100000018000000030000000000030000006900044E6F6D
+      650100490000000100055749445448020002001400074170656C69646F010049
+      0000000100055749445448020002000A0005456D61696C010049000000010005
+      57494454480200020014000000}
+    Active = True
+    Aggregates = <>
+    FieldDefs = <
+      item
+        Name = 'Nome'
+        DataType = ftString
+        Size = 20
+      end
+      item
+        Name = 'Apelido'
+        DataType = ftString
+        Size = 10
+      end
+      item
+        Name = 'Email'
+        DataType = ftString
+        Size = 20
+      end>
+    IndexDefs = <>
+    Params = <>
+    StoreDefs = True
+    BeforePost = ClientDataSet1BeforePost
+    Left = 32
+    Top = 112
+    object ClientDataSet1Nome: TStringField
+      FieldName = 'Nome'
+    end
+    object ClientDataSet1Apelido: TStringField
+      FieldName = 'Apelido'
+      Size = 10
+    end
+    object ClientDataSet1Email: TStringField
+      FieldName = 'Email'
+    end
+  end
+  object DataSource1: TDataSource
+    DataSet = ClientDataSet1
+    Left = 32
+    Top = 168
+  end
+  object BindingsList1: TBindingsList
+    Methods = <>
+    OutputConverters = <>
+    Left = 36
+    Top = 5
+    object DBLinkEdit1Nome1: TBindDBEditLink
+      Category = 'DB Links'
+      DataSource = BindScopeDB1
+      FieldName = 'Nome'
+      EditControl = Edit1
+    end
+    object DBLinkEdit2Apelido1: TBindDBEditLink
+      Category = 'DB Links'
+      DataSource = BindScopeDB1
+      FieldName = 'Apelido'
+      EditControl = Edit2
+    end
+    object DBLinkEdit3Email1: TBindDBEditLink
+      Category = 'DB Links'
+      DataSource = BindScopeDB1
+      FieldName = 'Email'
+      EditControl = Edit3
+    end
+  end
+  object BindScopeDB1: TBindScopeDB
+    DataSource = DataSource1
+    ScopeMappings = <>
+    Left = 34
+    Top = 58
   end
 end

@@ -3,14 +3,14 @@ program ProjetoControlPag;
 uses
   FMX.Forms,
   uControlPag in 'uControlPag.pas' {frmControlPag},
-  uPessoa in 'SystemClass\uPessoa.pas',
   uButtonHelper in 'UtilitiesClass\uButtonHelper.pas',
   uIFTernario in 'UtilitiesClass\uIFTernario.pas',
   uLibrary in 'UtilitiesClass\uLibrary.pas',
+  uUsuario in 'SystemClass\uUsuario.pas',
   uContato in 'SystemClass\uContato.pas',
+  uEndereco in 'SystemClass\uEndereco.pas',
   uFisica in 'SystemClass\uFisica.pas',
-  uJuridica in 'SystemClass\uJuridica.pas',
-  uIPessoa in 'SystemClass\uIPessoa.pas';
+  uPessoa in 'SystemClass\uPessoa.pas';
 
 {$R *.res}
 

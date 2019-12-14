@@ -5,13 +5,11 @@ interface
 type
   TContato = class
   private
-    FTelefone: string;
-    FCelular: string;
-    FRecado : string;
-  public
-    property Telefone: string read FTelefone write FTelefone;
-    property Celular: string read FCelular write FCelular;
-    property Recado: string read FRecado write FRecado;
+    Ftelefone: string;
+    Fcelular: string;
+  published
+    property Telefone: string read Ftelefone write Ftelefone;
+    property Celular: string read Fcelular write Fcelular;
   end;
 
 implementation

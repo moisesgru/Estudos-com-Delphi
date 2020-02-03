@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2019/11/25 16:06:48.000.338,=C:\Users\techtrs\Documents\RAD Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2020/01/07 14:36:57.000.159,=C:\Users\techtrs\Documents\RAD Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2020/01/07 14:44:26.000.697,Z:\Partilha\GitHub\TestesDelphi\ManipulandoXMLDelphi\uEscreverXML.dfm=C:\Users\techtrs\Documents\RAD Studio\Projects\Unit2.dfm</Transaction>
+    <Transaction>2020/01/07 14:44:26.000.697,Z:\Partilha\GitHub\TestesDelphi\ManipulandoXMLDelphi\uEscreverXML.pas=C:\Users\techtrs\Documents\RAD Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2020/01/07 14:46:00.000.885,Z:\Partilha\GitHub\TestesDelphi\ManipulandoXMLDelphi\Trabalhando_XML_Delphi.dproj=C:\Users\techtrs\Documents\RAD Studio\Projects\Project2.dproj</Transaction>
+    <Transaction>2020/01/08 09:09:18.000.520,=Z:\Partilha\GitHub\TestesDelphi\ManipulandoXMLDelphi\Unit1.pas</Transaction>
+    <Transaction>2020/01/08 09:10:32.000.921,Z:\Partilha\GitHub\TestesDelphi\ManipulandoXMLDelphi\Unit1.dfm=Z:\Partilha\GitHub\TestesDelphi\ManipulandoXMLDelphi\uLerXML.dfm</Transaction>
+    <Transaction>2020/01/08 09:10:32.000.921,Z:\Partilha\GitHub\TestesDelphi\ManipulandoXMLDelphi\Unit1.pas=Z:\Partilha\GitHub\TestesDelphi\ManipulandoXMLDelphi\uLerXML.pas</Transaction>
+    <Transaction>2020/01/08 09:11:50.000.854,Z:\Partilha\GitHub\TestesDelphi\ManipulandoXMLDelphi\uLerXML.dfm=Z:\Partilha\GitHub\TestesDelphi\ManipulandoXMLDelphi\uFrmLerXML.dfm</Transaction>
+    <Transaction>2020/01/08 09:11:50.000.854,Z:\Partilha\GitHub\TestesDelphi\ManipulandoXMLDelphi\uLerXML.pas=Z:\Partilha\GitHub\TestesDelphi\ManipulandoXMLDelphi\uFrmLerXML.pas</Transaction>
+    <Transaction>2020/01/08 09:11:59.000.248,Z:\Partilha\GitHub\TestesDelphi\ManipulandoXMLDelphi\uEscreverXML.pas=Z:\Partilha\GitHub\TestesDelphi\ManipulandoXMLDelphi\uFrmEscreverXML.pas</Transaction>
+    <Transaction>2020/01/08 09:11:59.000.248,Z:\Partilha\GitHub\TestesDelphi\ManipulandoXMLDelphi\uEscreverXML.dfm=Z:\Partilha\GitHub\TestesDelphi\ManipulandoXMLDelphi\uFrmEscreverXML.dfm</Transaction>
+    <Transaction>2020/01/08 09:24:19.000.138,=Z:\Partilha\GitHub\TestesDelphi\ManipulandoXMLDelphi\Unit1.pas</Transaction>
+    <Transaction>2020/01/08 09:24:38.000.465,Z:\Partilha\GitHub\TestesDelphi\ManipulandoXMLDelphi\Unit1.pas=Z:\Partilha\GitHub\TestesDelphi\ManipulandoXMLDelphi\Model\uCliente.pas</Transaction>
+    <Transaction>2020/01/08 09:24:42.000.937,=Z:\Partilha\GitHub\TestesDelphi\ManipulandoXMLDelphi\Unit1.pas</Transaction>
+    <Transaction>2020/01/08 09:25:06.000.618,Z:\Partilha\GitHub\TestesDelphi\ManipulandoXMLDelphi\Unit1.pas=Z:\Partilha\GitHub\TestesDelphi\ManipulandoXMLDelphi\uClienteTelefone.pas</Transaction>
+  </Transactions>
+</BorlandProject>

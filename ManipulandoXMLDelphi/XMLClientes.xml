@@ -1,0 +1,14 @@
+<cliente>
+   <nome>Wesley Yamazack</nome>
+   <sexo>masculino</sexo>      
+   <telefones>      
+      <telefone n="1">        
+        <ddd>22</ddd>
+        <numero>987475566</numero>
+      </telefone>
+      <telefone n="2">        
+        <ddd>22</ddd>
+        <numero>34241111</numero>
+      </telefone>   
+    </telefones>
+</cliente>
